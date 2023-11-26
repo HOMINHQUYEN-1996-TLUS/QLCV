@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34221.43
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QLCV", "QLCV\QLCV.csproj", "{C6739A46-1373-4BFC-9ECC-E2F8A89DC6EF}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup1", "QLCV\setup_server\Setup1\Setup1.vdproj", "{4ECA08D0-1601-4046-BAD4-39018CE636C1}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup2", "Setup2\Setup2.vdproj", "{5D1F1201-87C3-4ECD-A522-6D7C5F155A2F}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup3", "Setup3\Setup3.vdproj", "{D05BBF49-284F-4DDF-BE34-7D2B84096793}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C6739A46-1373-4BFC-9ECC-E2F8A89DC6EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6739A46-1373-4BFC-9ECC-E2F8A89DC6EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6739A46-1373-4BFC-9ECC-E2F8A89DC6EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6739A46-1373-4BFC-9ECC-E2F8A89DC6EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4ECA08D0-1601-4046-BAD4-39018CE636C1}.Debug|Any CPU.ActiveCfg = Debug
+		{4ECA08D0-1601-4046-BAD4-39018CE636C1}.Release|Any CPU.ActiveCfg = Release
+		{5D1F1201-87C3-4ECD-A522-6D7C5F155A2F}.Debug|Any CPU.ActiveCfg = Debug
+		{5D1F1201-87C3-4ECD-A522-6D7C5F155A2F}.Release|Any CPU.ActiveCfg = Release
+		{D05BBF49-284F-4DDF-BE34-7D2B84096793}.Debug|Any CPU.ActiveCfg = Debug
+		{D05BBF49-284F-4DDF-BE34-7D2B84096793}.Release|Any CPU.ActiveCfg = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2E20579D-3683-4B19-A73D-12D82478A732}
+	EndGlobalSection
+EndGlobal
