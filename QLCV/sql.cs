@@ -20,9 +20,9 @@ namespace QLCV
       return $"INSERT INTO user (username, password, isadmin) " +
              $"VALUES ({username}, '{password}', '{usertype}')";
     }
-    public static string updateStatus(string status,string taskid, string username)
+    public static string updateStatus(string taskid)
     {
-      return $"update ManagerTasks set status = {status} where taskid = {taskid} and userid = {username}";
+      return $"UPDATE managertasks\r\nSET status = \r\n    CASE \r\n        WHEN status = 'đang giao' THEN 'đã nhận'\r\n        WHEN status = 'đã nhận' THEN 'hoàn thành'\r\n       \r\n        ELSE status\r\n    END\r\nWHERE taskid = '{taskid}'";
     }
     public static string SelectTatCa(string taskid, string username, string dateCreate1, string dateCreate2, string status)
     {
@@ -53,6 +53,20 @@ namespace QLCV
       // Thêm điều kiện với createddate cho trường hợp cả status và username đều trống
       return sqlQuery;
     }
+    public static string select_employee(string username,string status)
+    {
+      string query =  "SELECT * FROM managertasks where 1 = 1 ";
+      if (!string.IsNullOrEmpty(status) && !string.IsNullOrEmpty(username))
+      {
+        // Nếu cả status và username đều có dữ liệu, sử dụng OR để chọn một trong hai điều kiện
+        query += $" AND (status = '{status}' AND username = '{username}')";
+      }
+      else if (status.Equals(""))
+      {
+        query += $"AND username = '{username}'";
+      }
 
+      return query;
+    }
   }
 }

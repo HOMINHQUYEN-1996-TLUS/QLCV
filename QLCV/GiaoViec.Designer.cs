@@ -129,7 +129,7 @@
       // 
       AutoScaleDimensions = new SizeF(10F, 25F);
       AutoScaleMode = AutoScaleMode.Font;
-      ClientSize = new Size(800, 450);
+      ClientSize = new Size(772, 450);
       Controls.Add(btn_giaoviec_quaylai);
       Controls.Add(btn_giaoviec_lammoi);
       Controls.Add(btn_giaoviec_giaoviec);

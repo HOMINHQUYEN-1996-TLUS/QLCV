@@ -42,3 +42,4 @@ C:\Users\quyen\Documents\workspace\C_sharp\QLCV\QLCV\bin\Debug\net6.0-windows\ru
 C:\Users\quyen\Documents\workspace\C_sharp\QLCV\QLCV\bin\Debug\net6.0-windows\runtimes\win-x64\native\k5sprt64.dll
 C:\Users\quyen\Documents\workspace\C_sharp\QLCV\QLCV\bin\Debug\net6.0-windows\runtimes\win-x64\native\krb5_64.dll
 C:\Users\quyen\Documents\workspace\C_sharp\QLCV\QLCV\bin\Debug\net6.0-windows\runtimes\win-x64\native\krbcc64.dll
+C:\Users\quyen\Documents\workspace\C_sharp\QLCV\QLCV\obj\Debug\net6.0-windows\QLCV.sourcelink.json
