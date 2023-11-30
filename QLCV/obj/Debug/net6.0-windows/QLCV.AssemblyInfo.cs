@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("QLCV")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2927b3bffc00802ff595e0b0621284aa52a73c42")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
 [assembly: System.Reflection.AssemblyProductAttribute("QLCV")]
 [assembly: System.Reflection.AssemblyTitleAttribute("QLCV")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

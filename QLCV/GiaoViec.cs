@@ -53,14 +53,17 @@ namespace QLCV
     {
       DateTime currentDate = DateTime.Now;
       string ngayThangMoi = currentDate.ToString("yyyy-MM-dd");
-      MessageBox.Show(ngayThangMoi, "show");
       int id_congvan = int.Parse(txt_giaoviec_id_congvan.Text);
       string ten_congvan = txt_giaoviec_ten_congvan.Text;
       string id_canbo = combobox_giaoviec_canbo.Text;
 
       string query = sql.InsertTask(id_congvan, ten_congvan, id_canbo, ngayThangMoi);
       MySqlCommand cmd = new MySqlCommand(query, connectInsert);
-      cmd.ExecuteNonQuery();
+      int roweffect = cmd.ExecuteNonQuery();
+      if(roweffect != 0 )
+      {
+        MessageBox.Show("Giao Việc Thành Công", "Show");
+      }
     }
 
     private void btn_giaoviec_lammoi_Click(object sender, EventArgs e)

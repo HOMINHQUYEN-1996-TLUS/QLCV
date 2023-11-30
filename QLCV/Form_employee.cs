@@ -14,6 +14,8 @@ namespace QLCV
 {
   public partial class Form_employee : Form
   {
+    private doimatkhau fdoimatkhau;
+    private Formlogin fLogin;
     private bool isExit = false;
     private DataTable dataTable;
     private MySqlDataAdapter dataAdapter;
@@ -22,11 +24,13 @@ namespace QLCV
 
     private static MySqlConnection? connection2;
     private string username;
-    public Form_employee(string username)
+    private string password;
+    public Form_employee(string username, string password)
     {
       InitializeComponent();
       connection2 = Connect3.Connection();
       this.username = username;
+      this.password = password;
     }
     private void Form_employee_Load(object sender, EventArgs e)
     {
@@ -49,6 +53,11 @@ namespace QLCV
 
         // Hiển thị DataTable trên DataGridView
         dataGridView_employee.DataSource = dataTable;
+
+        foreach(DataGridViewColumn column in dataGridView_employee.Columns)
+        {
+          column.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
+        }
         int displayedRowCount = dataGridView_employee.DisplayedRowCount(true) - 1;
         label_employee_soluong.Text = displayedRowCount.ToString();
       }
@@ -118,7 +127,7 @@ namespace QLCV
         MessageBox.Show("Cập nhật thành công", "Show");
         LoadData();
       }
-      
+
     }
 
     private void dataGridView_employee_CellValueChanged(object sender, DataGridViewCellEventArgs e)
@@ -164,6 +173,20 @@ namespace QLCV
         DataGridViewRow selectedRow = dataGridView_employee.Rows[e.RowIndex];
         this.taskid = Int32.Parse(selectedRow.Cells["taskid"].Value.ToString());
       }
+    }
+
+    private void đổiMậtKhẩuToolStripMenuItem_Click(object sender, EventArgs e)
+    {
+      this.Hide();
+      fdoimatkhau = new doimatkhau(username,password);
+      fdoimatkhau.Show();
+    }
+
+    private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
+    {
+      this.Hide();
+      fLogin = new Formlogin();
+      fLogin.Show();
     }
   }
 }

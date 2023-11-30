@@ -35,7 +35,9 @@
       quảnLýTàiKhoảnToolStripMenuItem = new ToolStripMenuItem();
       tHoátToolStripMenuItem = new ToolStripMenuItem();
       giaoViệcToolStripMenuItem = new ToolStripMenuItem();
+      đổiMậtKhẩuToolStripMenuItem = new ToolStripMenuItem();
       groupBox1 = new GroupBox();
+      btn_capnhat = new Button();
       combobox_canbo = new ComboBox();
       combobox_trangthai = new ComboBox();
       label4 = new Label();
@@ -51,6 +53,8 @@
       label5 = new Label();
       label2 = new Label();
       label_soluong = new Label();
+      btn_admin_xoa = new Button();
+      xuấtExcelToolStripMenuItem = new ToolStripMenuItem();
       menuStrip1.SuspendLayout();
       groupBox1.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)datacongvan).BeginInit();
@@ -59,16 +63,16 @@
       // menuStrip1
       // 
       menuStrip1.ImageScalingSize = new Size(24, 24);
-      menuStrip1.Items.AddRange(new ToolStripItem[] { hệThốngToolStripMenuItem, giaoViệcToolStripMenuItem });
+      menuStrip1.Items.AddRange(new ToolStripItem[] { hệThốngToolStripMenuItem, giaoViệcToolStripMenuItem, đổiMậtKhẩuToolStripMenuItem });
       menuStrip1.Location = new Point(0, 0);
       menuStrip1.Name = "menuStrip1";
-      menuStrip1.Size = new Size(687, 33);
+      menuStrip1.Size = new Size(1385, 33);
       menuStrip1.TabIndex = 0;
       menuStrip1.Text = "menuStrip1";
       // 
       // hệThốngToolStripMenuItem
       // 
-      hệThốngToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { quảnLýTàiKhoảnToolStripMenuItem, tHoátToolStripMenuItem });
+      hệThốngToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { quảnLýTàiKhoảnToolStripMenuItem, tHoátToolStripMenuItem, xuấtExcelToolStripMenuItem });
       hệThốngToolStripMenuItem.Name = "hệThốngToolStripMenuItem";
       hệThốngToolStripMenuItem.Size = new Size(106, 29);
       hệThốngToolStripMenuItem.Text = "Hệ Thống";
@@ -94,8 +98,16 @@
       giaoViệcToolStripMenuItem.Text = "Giao Việc";
       giaoViệcToolStripMenuItem.Click += giaoViệcToolStripMenuItem_Click;
       // 
+      // đổiMậtKhẩuToolStripMenuItem
+      // 
+      đổiMậtKhẩuToolStripMenuItem.Name = "đổiMậtKhẩuToolStripMenuItem";
+      đổiMậtKhẩuToolStripMenuItem.Size = new Size(136, 29);
+      đổiMậtKhẩuToolStripMenuItem.Text = "Đổi Mật Khẩu";
+      đổiMậtKhẩuToolStripMenuItem.Click += đổiMậtKhẩuToolStripMenuItem_Click;
+      // 
       // groupBox1
       // 
+      groupBox1.Controls.Add(btn_capnhat);
       groupBox1.Controls.Add(combobox_canbo);
       groupBox1.Controls.Add(combobox_trangthai);
       groupBox1.Controls.Add(label4);
@@ -113,6 +125,16 @@
       groupBox1.TabIndex = 1;
       groupBox1.TabStop = false;
       groupBox1.Text = "Tìm kiếm";
+      // 
+      // btn_capnhat
+      // 
+      btn_capnhat.Location = new Point(525, 203);
+      btn_capnhat.Name = "btn_capnhat";
+      btn_capnhat.Size = new Size(112, 34);
+      btn_capnhat.TabIndex = 10;
+      btn_capnhat.Text = "Cập Nhật";
+      btn_capnhat.UseVisualStyleBackColor = true;
+      btn_capnhat.Click += btn_capnhat_Click;
       // 
       // combobox_canbo
       // 
@@ -234,8 +256,9 @@
       datacongvan.Name = "datacongvan";
       datacongvan.RowHeadersWidth = 62;
       datacongvan.RowTemplate.Height = 33;
-      datacongvan.Size = new Size(663, 294);
+      datacongvan.Size = new Size(1353, 294);
       datacongvan.TabIndex = 2;
+      datacongvan.CellClick += datacongvan_CellClick;
       datacongvan.CellContentClick += datacongvan_CellContentClick;
       datacongvan.DataBindingComplete += datacongvan_DataBindingComplete;
       // 
@@ -252,25 +275,44 @@
       // label2
       // 
       label2.AutoSize = true;
-      label2.Location = new Point(25, 731);
+      label2.Location = new Point(12, 706);
       label2.Name = "label2";
-      label2.Size = new Size(89, 25);
+      label2.Size = new Size(174, 25);
       label2.TabIndex = 4;
-      label2.Text = "Số Lượng";
+      label2.Text = "Số Lượng Công Việc";
+      label2.Click += label2_Click;
       // 
       // label_soluong
       // 
       label_soluong.AutoSize = true;
-      label_soluong.Location = new Point(144, 731);
+      label_soluong.Location = new Point(192, 706);
       label_soluong.Name = "label_soluong";
       label_soluong.Size = new Size(0, 25);
       label_soluong.TabIndex = 4;
+      // 
+      // btn_admin_xoa
+      // 
+      btn_admin_xoa.Location = new Point(1253, 706);
+      btn_admin_xoa.Name = "btn_admin_xoa";
+      btn_admin_xoa.Size = new Size(112, 34);
+      btn_admin_xoa.TabIndex = 5;
+      btn_admin_xoa.Text = "Xoá";
+      btn_admin_xoa.UseVisualStyleBackColor = true;
+      btn_admin_xoa.Click += btn_admin_xoa_Click;
+      // 
+      // xuấtExcelToolStripMenuItem
+      // 
+      xuấtExcelToolStripMenuItem.Name = "xuấtExcelToolStripMenuItem";
+      xuấtExcelToolStripMenuItem.Size = new Size(270, 34);
+      xuấtExcelToolStripMenuItem.Text = "Xuất Excel";
+      xuấtExcelToolStripMenuItem.Click += xuấtExcelToolStripMenuItem_Click;
       // 
       // Form_admin
       // 
       AutoScaleDimensions = new SizeF(10F, 25F);
       AutoScaleMode = AutoScaleMode.Font;
-      ClientSize = new Size(687, 874);
+      ClientSize = new Size(1385, 874);
+      Controls.Add(btn_admin_xoa);
       Controls.Add(label_soluong);
       Controls.Add(label2);
       Controls.Add(label5);
@@ -316,5 +358,9 @@
     private Label label6;
     private Label label2;
     private Label label_soluong;
+    private Button btn_capnhat;
+    private Button btn_admin_xoa;
+    private ToolStripMenuItem đổiMậtKhẩuToolStripMenuItem;
+    private ToolStripMenuItem xuấtExcelToolStripMenuItem;
   }
 }

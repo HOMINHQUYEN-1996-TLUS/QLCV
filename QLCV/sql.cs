@@ -68,5 +68,13 @@ namespace QLCV
 
       return query;
     }
+    public static string delete_task(string taskid)
+    {
+      return $"DELETE from managertasks where taskid = '{taskid}'";
+    }
+    public static string update_matkhau(string username,string password)
+    {
+      return $"UPDATE user SET password = '{password}' where username = '{username}'";
+    }
   }
 }

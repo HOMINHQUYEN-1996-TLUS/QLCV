@@ -35,7 +35,11 @@
       label2 = new Label();
       label_employee_soluong = new Label();
       dataGridView_employee = new DataGridView();
+      menuStrip1 = new MenuStrip();
+      đổiMậtKhẩuToolStripMenuItem = new ToolStripMenuItem();
+      đăngXuấtToolStripMenuItem = new ToolStripMenuItem();
       ((System.ComponentModel.ISupportInitialize)dataGridView_employee).BeginInit();
+      menuStrip1.SuspendLayout();
       SuspendLayout();
       // 
       // comboBox_employee
@@ -53,7 +57,7 @@
       btn_employee_timkiem.Name = "btn_employee_timkiem";
       btn_employee_timkiem.Size = new Size(112, 34);
       btn_employee_timkiem.TabIndex = 2;
-      btn_employee_timkiem.Text = "Tìm kiếm";
+      btn_employee_timkiem.Text = "Tìm kiếm Công Văn";
       btn_employee_timkiem.UseVisualStyleBackColor = true;
       btn_employee_timkiem.Click += btn_employee_timkiem_Click;
       // 
@@ -68,7 +72,7 @@
       // 
       // btn_employee_capnhat
       // 
-      btn_employee_capnhat.Location = new Point(302, 296);
+      btn_employee_capnhat.Location = new Point(23, 302);
       btn_employee_capnhat.Name = "btn_employee_capnhat";
       btn_employee_capnhat.Size = new Size(238, 34);
       btn_employee_capnhat.TabIndex = 2;
@@ -79,7 +83,7 @@
       // label2
       // 
       label2.AutoSize = true;
-      label2.Location = new Point(517, 254);
+      label2.Location = new Point(515, 302);
       label2.Name = "label2";
       label2.Size = new Size(188, 25);
       label2.TabIndex = 4;
@@ -88,7 +92,7 @@
       // label_employee_soluong
       // 
       label_employee_soluong.AutoSize = true;
-      label_employee_soluong.Location = new Point(724, 254);
+      label_employee_soluong.Location = new Point(721, 307);
       label_employee_soluong.Name = "label_employee_soluong";
       label_employee_soluong.Size = new Size(22, 25);
       label_employee_soluong.TabIndex = 4;
@@ -98,11 +102,11 @@
       // dataGridView_employee
       // 
       dataGridView_employee.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-      dataGridView_employee.Location = new Point(23, 12);
+      dataGridView_employee.Location = new Point(12, 37);
       dataGridView_employee.Name = "dataGridView_employee";
       dataGridView_employee.RowHeadersWidth = 62;
       dataGridView_employee.RowTemplate.Height = 33;
-      dataGridView_employee.Size = new Size(801, 225);
+      dataGridView_employee.Size = new Size(1025, 225);
       dataGridView_employee.TabIndex = 0;
       dataGridView_employee.DataSourceChanged += dataGridView_employee_DataSourceChanged;
       dataGridView_employee.EditModeChanged += dataGridView_employee_EditModeChanged;
@@ -110,11 +114,35 @@
       dataGridView_employee.CellContentClick += dataGridView_employee_CellContentClick;
       dataGridView_employee.CellValueChanged += dataGridView_employee_CellValueChanged;
       // 
+      // menuStrip1
+      // 
+      menuStrip1.ImageScalingSize = new Size(24, 24);
+      menuStrip1.Items.AddRange(new ToolStripItem[] { đổiMậtKhẩuToolStripMenuItem, đăngXuấtToolStripMenuItem });
+      menuStrip1.Location = new Point(0, 0);
+      menuStrip1.Name = "menuStrip1";
+      menuStrip1.Size = new Size(1060, 33);
+      menuStrip1.TabIndex = 5;
+      menuStrip1.Text = "menuStrip1";
+      // 
+      // đổiMậtKhẩuToolStripMenuItem
+      // 
+      đổiMậtKhẩuToolStripMenuItem.Name = "đổiMậtKhẩuToolStripMenuItem";
+      đổiMậtKhẩuToolStripMenuItem.Size = new Size(136, 29);
+      đổiMậtKhẩuToolStripMenuItem.Text = "Đổi Mật Khẩu";
+      đổiMậtKhẩuToolStripMenuItem.Click += đổiMậtKhẩuToolStripMenuItem_Click;
+      // 
+      // đăngXuấtToolStripMenuItem
+      // 
+      đăngXuấtToolStripMenuItem.Name = "đăngXuấtToolStripMenuItem";
+      đăngXuấtToolStripMenuItem.Size = new Size(112, 29);
+      đăngXuấtToolStripMenuItem.Text = "Đăng Xuất";
+      đăngXuấtToolStripMenuItem.Click += đăngXuấtToolStripMenuItem_Click;
+      // 
       // Form_employee
       // 
       AutoScaleDimensions = new SizeF(10F, 25F);
       AutoScaleMode = AutoScaleMode.Font;
-      ClientSize = new Size(858, 450);
+      ClientSize = new Size(1060, 450);
       Controls.Add(label_employee_soluong);
       Controls.Add(label2);
       Controls.Add(label1);
@@ -122,12 +150,16 @@
       Controls.Add(btn_employee_timkiem);
       Controls.Add(comboBox_employee);
       Controls.Add(dataGridView_employee);
+      Controls.Add(menuStrip1);
+      MainMenuStrip = menuStrip1;
       Name = "Form_employee";
       StartPosition = FormStartPosition.CenterScreen;
       Text = "Form_employee";
       FormClosing += Form_employee_FormClosing;
       Load += Form_employee_Load;
       ((System.ComponentModel.ISupportInitialize)dataGridView_employee).EndInit();
+      menuStrip1.ResumeLayout(false);
+      menuStrip1.PerformLayout();
       ResumeLayout(false);
       PerformLayout();
     }
@@ -140,5 +172,8 @@
     private Label label2;
     private Label label_employee_soluong;
     private DataGridView dataGridView_employee;
+    private MenuStrip menuStrip1;
+    private ToolStripMenuItem đổiMậtKhẩuToolStripMenuItem;
+    private ToolStripMenuItem đăngXuấtToolStripMenuItem;
   }
 }

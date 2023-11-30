@@ -15,7 +15,7 @@ namespace QLCV
     {
       InitializeComponent();
       mySqlConnection = Connect3.Connection();
-      mySqlConnection.Open();
+      
     }
 
     private void Form1_Load(object sender, EventArgs e)
@@ -56,8 +56,9 @@ namespace QLCV
       }
       else
       {
+        mySqlConnection.Open();
         string query = $"SELECT * FROM user WHERE username='{username}' AND password='{password}';";
-        MySqlCommand cmd = new MySqlCommand(query, mySqlConnection);
+        /*MySqlCommand cmd = new MySqlCommand(query, mySqlConnection);
         MySqlDataReader reader = cmd.ExecuteReader();
 
         while (reader.Read())
@@ -66,17 +67,49 @@ namespace QLCV
           {
             if (reader.GetBoolean(2))
             {
-              Form_admin form_Admin = new Form_admin();
+              Form_admin form_Admin = new Form_admin(username,password);
               form_Admin.Show();
               this.Hide();
             }
             else
             {
-              Form_employee form_Employee = new Form_employee(username);
+              Form_employee form_Employee = new Form_employee(username, password);
               form_Employee.Show();
               this.Hide();
             }
 
+          }
+          else
+          {
+            MessageBox.Show("Đăng nhập thất bại", "Show");
+          }
+        }*/
+        using (MySqlCommand cmd = new MySqlCommand(query, mySqlConnection))
+        {
+          using (MySqlDataReader reader = cmd.ExecuteReader())
+          {
+            if (reader.HasRows)
+            {
+              while (reader.Read())
+              {
+                if (reader.GetBoolean(2))
+                {
+                  Form_admin form_Admin = new Form_admin(username, password);
+                  form_Admin.Show();
+                  this.Hide();
+                }
+                else
+                {
+                  Form_employee form_Employee = new Form_employee(username, password);
+                  form_Employee.Show();
+                  this.Hide();
+                }
+              }
+            }
+            else
+            {
+              Console.WriteLine("Sai username or password. Please try again.");
+            }
           }
         }
       }
